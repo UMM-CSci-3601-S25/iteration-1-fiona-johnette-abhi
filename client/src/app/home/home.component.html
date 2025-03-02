@@ -14,11 +14,11 @@
 
       <div class="button-container">
         <a href="hostgame.component.html">
-          <button type="button">Host Game</button>
+          <button routerLink="/about" [routerLink]=" ['/hostgame']" routerLinkActive="HostGameButton">Host Game</button>
         </a>
 
         <a href="joingame.component.html">
-          <button type="button">Join Game</button>
+          <button routerLink="/about" [routerLink]=" ['/joingame']" routerLinkActive="JoinGameButton">Join Game</button>
         </a>
       </div>
     </div>

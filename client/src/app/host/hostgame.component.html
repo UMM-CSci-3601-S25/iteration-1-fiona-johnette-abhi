@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Host Game</h1>
+
+  <p>Game Code: <strong>{{ gameCode }}</strong></p>
+  <p id="waitingMessage">Waiting for players to join...</p>
+  <p>Players Joined: <span>{{ playersJoined }}</span>/12</p>
+
+  <button [disabled]="playersJoined < minPlayers" (click)="startGame()">Start Game</button>
+
+</div>
