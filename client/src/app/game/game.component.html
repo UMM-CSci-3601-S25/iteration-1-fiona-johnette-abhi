@@ -1,0 +1,28 @@
+<div class="game-container">
+  <h1>{{ roundTitle }}</h1>
+
+  <div [class.hidden]="!isJudge">
+    <p>You are the judge for this round.</p>
+    <p>Pick the best answer!</p>
+  </div>
+
+  <div [class.hidden]="isJudge">
+    <p>Answer the following prompt:</p>
+    <p><strong>{{ prompt }}</strong></p>
+    <textarea (input)="onPlayerAnswerChange($event)" placeholder="Enter your response..."></textarea>
+    <button (click)="submitAnswer()">Submit Answer</button>
+  </div>
+
+  <div [class.hidden]="!isJudgingPhase">
+    <p>Judging responses...</p>
+    <ul>
+      <li *ngFor="let answer of answers">{{ answer }}</li>
+    </ul>
+  </div>
+
+  <div class="status">
+    <p>Players: {{ playersJoined }}/12</p>
+    <p>Role: {{ isJudge ? 'Judge' : 'Player' }}</p>
+    <p>Points: {{ points }}</p>
+  </div>
+</div>
