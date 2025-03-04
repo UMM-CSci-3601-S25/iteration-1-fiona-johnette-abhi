@@ -5,6 +5,7 @@
   <p id="waitingMessage">Waiting for players to join...</p>
   <p>Players Joined: <span>{{ playersJoined }}</span>/12</p>
 
-  <button [disabled]="playersJoined < minPlayers" (click)="startGame()">Start Game</button>
+    <button  [routerLink]=" ['/game']" routerLinkActive="StartGameButton">Start Game</button>
+
 
 </div>

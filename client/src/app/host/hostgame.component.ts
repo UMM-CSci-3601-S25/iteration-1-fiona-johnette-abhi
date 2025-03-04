@@ -1,10 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-host',
   templateUrl: './hostgame.component.html',
   styleUrls: ['./hostgame.component.scss'],
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    RouterLink,
+    MatIconModule,
+  ]
 })
 export class HostgameComponent implements OnInit {
   gameCode: string = '';            // Store the generated game code
