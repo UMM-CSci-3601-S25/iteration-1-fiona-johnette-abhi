@@ -1,17 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../services/game.service';
+import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-joingame',
   templateUrl: './joingame.component.html',
-  styleUrls: ['./joingame.component.scss']
+  styleUrls: ['./joingame.component.scss'],
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    RouterLink,
+    MatIconModule,
+  ]
 })
 export class JoingameComponent implements OnInit {
   gameCode: string = '';
   playersJoined: number = 0;
   gameFull: boolean = false;
 
-  constructor(private gameService: GameService) { }
+  constructor(private gameService: GameService, private router: Router) { }
 
   ngOnInit(): void {
     // Get the generated game code from the GameService
@@ -34,19 +45,20 @@ export class JoingameComponent implements OnInit {
     if (enteredCode.trim() !== '' && enteredCode === this.gameCode && this.playersJoined < 12) {
       this.playersJoined++;
       this.gameService.updatePlayersJoined(this.playersJoined);
-
       // Check if the game is now full
       if (this.playersJoined >= 12) {
         this.gameFull = true;
       }
+
+      // Navigate to StartgameComponent
+      this.router.navigate(['/startgame']);
     } else {
       alert('Invalid Game Code or Game Full');
     }
   }
 
   backToHome() {
-    // This method can be used to navigate back to the home page if necessary
-    // You can use router.navigate(['/home']) if the Router is needed for this method
-    console.log('Navigating back to home');
+    // Navigate back to the home page
+    this.router.navigate(['/home']);
   }
 }
