@@ -1,0 +1,58 @@
+[
+{
+  "_id": { "$oid": "65f0e9b91234567890abcdef" },
+
+  "players": [
+    { "playerId": { "$oid": "65f0e9b91a2b3c4d5e6f7001" } },
+    { "playerId": { "$oid": "65f0e9b98a7b6c5d4e3f2002" } },
+    { "playerId": { "$oid": "65f0e9b94000000000000003" } }
+  ],
+  "status": "judge",
+  "currentRound": 2,
+  "rounds": [
+    {
+      "roundNumber": 1,
+      "judgeId": { "$oid": "65f0e9b91a2b3c4d5e6f7001" },
+      "submissions": [
+        {
+          "playerId": { "$oid": "65f0e9b98a7b6c5d4e3f2002" },
+          "submission": "A hilarious joke.",
+          "vote": { "$oid": "65f0e9b94000000000000003" },
+          "pointsAwarded": 5
+        },
+        {
+          "playerId": { "$oid": "65f0e9b94000000000000003" },
+          "submission": "A witty pun.",
+          "vote": { "$oid": "65f0e9b94000000000000003" },
+          "pointsAwarded": 5
+        }
+      ],
+      "roundWinner": { "$oid": "65f0e9b94000000000000003" },
+      "isStringRound": true
+    },
+    {
+      "roundNumber": 2,
+      "judgeId": { "$oid": "65f0e9b98a7b6c5d4e3f2002" },
+      "submissions": [
+        {
+          "playerId": { "$oid": "65f0e9b91a2b3c4d5e6f7001" },
+          "submission": "A creative story.",
+          "vote": { "$oid": "65f0e9b94000000000000003" },
+          "pointsAwarded": 10
+        },
+        {
+          "playerId": { "$oid": "65f0e9b94000000000000003" },
+          "submission": "A short poem.",
+          "vote": { "$oid": "65f0e9b94000000000000003" },
+          "pointsAwarded": 10
+        }
+      ],
+      "roundWinner": { "$oid": "65f0e9b94000000000000003" },
+      "isStringRound": true
+    }
+  ],
+  "gameState": "inProgress",
+  "deck": [],
+  "discardPile": []
+}
+]
