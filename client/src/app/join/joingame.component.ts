@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-joingame',
   templateUrl: './joingame.component.html',
   styleUrls: ['./joingame.component.scss'],
+  standalone: true,
   imports: [
     MatCardModule,
     MatButtonModule,
@@ -18,7 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
   ]
 })
 export class JoingameComponent implements OnInit {
-  gameCode: string = '';
+  enteredGameCode: string = '';
+  correctGameCode: string = '';
   playersJoined: number = 0;
   gameFull: boolean = false;
 
@@ -27,38 +29,26 @@ export class JoingameComponent implements OnInit {
   ngOnInit(): void {
     // Get the generated game code from the GameService
     this.gameService.getGameCode().subscribe(code => {
-      this.gameCode = code;
+      this.correctGameCode = code;
+      console.log('Correct game code from host:', this.correctGameCode);
     });
     // Subscribe to the number of players joined
     this.gameService.getPlayersJoined().subscribe(count => {
       this.playersJoined = count;
     });
-
-    // Subscribe to the game full status
-    this.gameService.isGameFull().subscribe(full => {
-      this.gameFull = full;
-    });
   }
 
   joinGame(enteredCode: string) {
-    // Check if the entered code matches the generated game code and ensure the game is not full
-    if (enteredCode.trim() !== '' && enteredCode === this.gameCode && this.playersJoined < 12) {
-      this.playersJoined++;
-      this.gameService.updatePlayersJoined(this.playersJoined);
-      // Check if the game is now full
-      if (this.playersJoined >= 12) {
-        this.gameFull = true;
-      }
-
-      // Navigate to StartgameComponent
-      this.router.navigate(['/startgame']);
+    console.log('Entered game code:', enteredCode);
+    if (enteredCode === this.correctGameCode) {
+      // Proceed to join the game
+      console.log('Joining game...');
+      // Navigate to the game page or any other logic you want to include
+      this.router.navigate(['/game']);
     } else {
-      alert('Invalid Game Code or Game Full');
+      // Log an error message
+      console.log('Entered game code does not match the correct game code');
     }
   }
-
-  backToHome() {
-    // Navigate back to the home page
-    this.router.navigate(['/home']);
-  }
 }
+

@@ -12,8 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     MatCardModule,
     MatButtonModule,
-    RouterLink,
     MatIconModule,
+    RouterLink,
   ]
 })
 export class HostgameComponent implements OnInit {
@@ -56,3 +56,4 @@ export class HostgameComponent implements OnInit {
     this.gameCode = this.generateGameCode();  // Generate random code for the host
   }
 }
+
