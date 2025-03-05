@@ -1,28 +1,44 @@
-<div class="game-container">
-  <h1>{{ roundTitle }}</h1>
+<html>
+<body>
 
-  <div [class.hidden]="!isJudge">
-    <p>You are the judge for this round.</p>
-    <p>Pick the best answer!</p>
+
+  <div id="join-game" class="game-container hidden">
+    <h1 id="round-title">ROUND 1</h1>
+
+    <div id="judge-section" class="hidden">
+
+      <textarea id="prompt" placeholder="Enter your prompt..."></textarea>
+      <button onclick="submitPrompt()">Submit Prompt</button>
+    </div>
+
+    <div id="player-section" class="hidden">
+
+      <p id="display-prompt"><strong></strong></p>
+      <textarea id="player-answer" placeholder="Enter your question..."></textarea>
+      <button onclick="submitAnswer()">Submit</button>
+    </div>
+
+    <div id="judging-phase" class="hidden">
+
+      <ul id="answers-list"></ul>
+    </div>
+
+    <div class="status">
+      <p>Role: <span id="role"></span></p>
+      <p>Points: <span id="points">0</span></p>
+    </div>
   </div>
 
-  <div [class.hidden]="isJudge">
-    <p>Answer the following prompt:</p>
-    <p><strong>{{ prompt }}</strong></p>
-    <textarea (input)="onPlayerAnswerChange($event)" placeholder="Enter your response..."></textarea>
-    <button (click)="submitAnswer()">Submit Answer</button>
-  </div>
+  <script>
+    function showHostGame() {
+      document.getElementById('host-game').classList.remove('hidden');
+      document.getElementById('join-game').classList.add('hidden');
+    }
 
-  <div [class.hidden]="!isJudgingPhase">
-    <p>Judging responses...</p>
-    <ul>
-      <li *ngFor="let answer of answers">{{ answer }}</li>
-    </ul>
-  </div>
-
-  <div class="status">
-    <p>Players: {{ playersJoined }}/12</p>
-    <p>Role: {{ isJudge ? 'Judge' : 'Player' }}</p>
-    <p>Points: {{ points }}</p>
-  </div>
-</div>
+    function showJoinGame() {
+      document.getElementById('join-game').classList.remove('hidden');
+      document.getElementById('host-game').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
