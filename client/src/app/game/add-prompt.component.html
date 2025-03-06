@@ -1,0 +1,33 @@
+<!-- <div class="flex-row">
+  <div class="flex-1">
+    <form [formGroup]="addPromptForm" (ngSubmit)="submitForm();">
+      <div class="add-prompt-container">
+        <div class="add-prompt-header">
+          <h2>New Prompt</h2>
+        </div>
+        <div class="add-prompt-content">
+          <div class="flex-col">
+            <mat-form-field>
+              <mat-label>Prompt</mat-label>
+              <input matInput formControlName="prompt" required>
+              @if (formControlHasError('prompt')) {
+                <mat-error data-test="promptError">
+                  {{getErrorMessage('prompt')}}
+                </mat-error>
+              }
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="add-prompt-actions">
+          <button mat-button type="submit" color="primary" [disabled]="!addPromptForm.valid" data-test="confirmAddPromptButton">
+            ADD PROMPT
+          </button>
+        </div>
+      </div>
+    </form>
+    <button mat-fab class="add-prompt-fab" matTooltip="Add Prompt" matTooltipPosition="left" routerLink="/prompts/new" data-test="addPromptButton">
+      <mat-icon class="md-24" aria-label="Add Prompt">add</mat-icon>
+    </button>
+  </div>
+</div> -->
+
