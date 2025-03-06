@@ -1,44 +1,15 @@
-<html>
-<body>
+<div class="game-container">
+  <h1>Enter response</h1>
 
 
-  <div id="join-game" class="game-container hidden">
-    <h1 id="round-title">ROUND 1</h1>
+    <h2>{{ selectedPrompt }}</h2>
 
-    <div id="judge-section" class="hidden">
 
-      <textarea id="prompt" placeholder="Enter your prompt..."></textarea>
-      <button onclick="submitPrompt()">Submit Prompt</button>
-    </div>
 
-    <div id="player-section" class="hidden">
+    <mat-form-field>
+      <mat-label>Your Response</mat-label>
+      <textarea matInput formControlName="response" required></textarea>
+    </mat-form-field>
 
-      <p id="display-prompt"><strong></strong></p>
-      <textarea id="player-answer" placeholder="Enter your question..."></textarea>
-      <button onclick="submitAnswer()">Submit</button>
-    </div>
-
-    <div id="judging-phase" class="hidden">
-
-      <ul id="answers-list"></ul>
-    </div>
-
-    <div class="status">
-      <p>Role: <span id="role"></span></p>
-      <p>Points: <span id="points">0</span></p>
-    </div>
+    <button mat-button type="submit" color="primary" [disabled]="!responseForm.valid">Submit Response</button>
   </div>
-
-  <script>
-    function showHostGame() {
-      document.getElementById('host-game').classList.remove('hidden');
-      document.getElementById('join-game').classList.add('hidden');
-    }
-
-    function showJoinGame() {
-      document.getElementById('join-game').classList.remove('hidden');
-      document.getElementById('host-game').classList.add('hidden');
-    }
-  </script>
-</body>
-</html>
