@@ -1,0 +1,62 @@
+[
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87216"
+  },
+  "prompt": "If animals could talk, which one would be the rudest?"
+},
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87217"
+  },
+  "prompt": "What's the weirdest thing you’ve seen someone do in public?"
+},
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87218"
+  },
+  "prompt": "If you could have any superpower, but it had to be completely useless, what would it be?"
+},
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87219"
+  },
+  "prompt": "What’s the funniest thing you’ve ever overheard?"
+},
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87220"
+  },
+  "prompt": "If you had to eat a crayon, what color would you choose and why?"
+},
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87221"
+  },
+  "prompt": "What’s your most embarrassing moment at a party?"
+},
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87222"
+  },
+  "prompt": "What’s the most ridiculous fact you know?"
+},
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87223"
+  },
+  "prompt": "If you had to swap lives with a fictional character, who would it be and why?"
+},
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87224"
+  },
+  "prompt": "What’s the most useless talent you have?"
+},
+{
+  "_id": {
+    "$oid": "58af3a600343927e48e87225"
+  },
+  "prompt": "What’s the funniest nickname you’ve ever heard?"
+}
+]

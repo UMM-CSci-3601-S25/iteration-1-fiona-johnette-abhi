@@ -1,0 +1,44 @@
+[
+  {
+    "_id": { "$oid": "1234567890abcdef12345678" },
+    "gameCode": "ABC123",
+    "players": [
+      { "name": "Player 1", "score": 0 },
+      { "name": "Player 2", "score": 0 }
+    ],
+    "currentRound": 1,
+    "rounds": [
+      { "roundNumber": 1, "winner": "Player 1" }
+    ],
+    "gameState": "waiting",
+    "winningPoints": 60
+  },
+  {
+    "_id": { "$oid": "abcdef1234567890abcdef12" },
+    "gameCode": "DEF456",
+    "players": [
+      { "name": "Player 3", "score": 0 },
+      { "name": "Player 4", "score": 0 }
+    ],
+    "currentRound": 1,
+    "rounds": [
+      { "roundNumber": 1, "winner": "Player 4" }
+    ],
+    "gameState": "inProgress",
+    "winningPoints": 60
+  },
+  {
+    "_id": { "$oid": "7890abcdef1234567890abcd" },
+    "gameCode": "GHI789",
+    "players": [
+      { "name": "Player 5", "score": 0 },
+      { "name": "Player 6", "score": 0 }
+    ],
+    "currentRound": 1,
+    "rounds": [
+      { "roundNumber": 1, "winner": "Player 6" }
+    ],
+    "gameState": "completed",
+    "winningPoints": 60
+  }
+]

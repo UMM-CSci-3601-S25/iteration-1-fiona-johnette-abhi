@@ -1,0 +1,15 @@
+<div class="game-container">
+  <h1>Enter response</h1>
+
+
+    <h2>{{ selectedPrompt }}</h2>
+
+
+
+    <mat-form-field>
+      <mat-label>Your Response</mat-label>
+      <textarea matInput formControlName="response" required></textarea>
+    </mat-form-field>
+
+    <button mat-button type="submit" color="primary" [disabled]="!responseForm.valid">Submit Response</button>
+  </div>
